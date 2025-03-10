@@ -16,7 +16,7 @@ app.get('/',(req, res)=>{
 //Registration page api
 
 app.post('/register',async(req, res)=>{
-    const{Username,email,password}=req.body
+    const {username,email,password}=req.body
     try{
         const hashedPassword= await bcrypt.hash(password,10)
         const user=new User({username,email,password:hashedPassword})
